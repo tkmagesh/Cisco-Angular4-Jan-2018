@@ -7,6 +7,7 @@ import { GreeterComponent }  from './greeter/greeter.component';
 import { CalculatorOneComponent } from './calculator/calculatorOne.component';
 import { CalculatorTwoComponent } from './calculator/calculatorTwo.component';
 import { CalculatorResultComponent } from './calculator/calculatorResult.component';
+import { ProductsComponent } from './products/products.component';
 
 /*
 registry for application entities
@@ -22,6 +23,7 @@ registry for application entities
     , CalculatorOneComponent
     , CalculatorTwoComponent
     , CalculatorResultComponent
+    , ProductsComponent
   ],
   imports: [
     BrowserModule
