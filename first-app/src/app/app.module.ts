@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { GreeterComponent }  from './greeter/greeter.component';
-
+import { CalculatorOneComponent } from './calculator/calculatorOne.component';
 
 /*
 registry for application entities
@@ -17,6 +17,7 @@ registry for application entities
   declarations: [
     AppComponent
     , GreeterComponent
+    , CalculatorOneComponent
   ],
   imports: [
     BrowserModule
