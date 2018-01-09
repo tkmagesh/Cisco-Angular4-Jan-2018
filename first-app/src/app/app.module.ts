@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { GreeterComponent }  from './greeter/greeter.component';
+
 
 /*
 registry for application entities
@@ -14,6 +16,7 @@ registry for application entities
 @NgModule({
   declarations: [
     AppComponent
+    , GreeterComponent
   ],
   imports: [
     BrowserModule
