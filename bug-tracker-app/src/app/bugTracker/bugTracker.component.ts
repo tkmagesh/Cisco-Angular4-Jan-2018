@@ -10,13 +10,13 @@ export class BugTrackerComponent{
 
 	sortBugBy : string = '';
 	sortDescending : boolean = false;
-	
+
 	onCreateNewClick(bugName : string){
 		let newBug : IBug = {
 			name : bugName,
 			isClosed : false
 		};
-		this.bugs.push(newBug);
+		this.bugs = [...this.bugs, newBug];
 	}
 
 	onBugNameClick(bug : IBug){
