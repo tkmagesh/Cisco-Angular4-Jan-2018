@@ -5,5 +5,9 @@ import { Component } from '@angular/core';
 	templateUrl : 'bugTracker.component.html'
 })
 export class BugTrackerComponent{
-	
+	bugs : string[] = [];
+
+	onCreateNewClick(bugName : string){
+		this.bugs.push(bugName);
+	}
 }
