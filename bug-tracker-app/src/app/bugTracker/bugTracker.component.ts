@@ -31,6 +31,7 @@ export class BugTrackerComponent{
 	}
 
 	getClosedCount(){
+		console.log('getClosedCount triggered');
 		let closedCount = 0;
 		for(let index=0, count=this.bugs.length; index < count; index++){
 			if (this.bugs[index].isClosed)
