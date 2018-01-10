@@ -8,6 +8,9 @@ import { IBug } from './models/IBug';
 export class BugTrackerComponent{
 	bugs : IBug[] = [];
 
+	sortBugBy : string = '';
+	sortDescending : boolean = false;
+	
 	onCreateNewClick(bugName : string){
 		let newBug : IBug = {
 			name : bugName,
