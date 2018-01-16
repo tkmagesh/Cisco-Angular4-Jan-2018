@@ -11,10 +11,10 @@ export class BugTrackerComponent{
 	sortBugBy : string = '';
 	sortDescending : boolean = false;
 
-	private _bugOperations : BugOperationsService;
+	//private _bugOperations : BugOperationsService;
 
-	constructor(bugOperations : BugOperationsService){
-		this._bugOperations = bugOperations;
+	constructor(private _bugOperations : BugOperationsService){
+		//this._bugOperations = bugOperations;
 	}
 
 	onCreateNewClick(bugName : string){
