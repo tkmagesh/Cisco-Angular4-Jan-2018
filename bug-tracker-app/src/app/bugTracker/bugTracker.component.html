@@ -18,7 +18,7 @@
 				[ngClass] = "{closed : bug.isClosed}"
 				title = "{{bug.name}}"
 			>{{ bug.name | trimText:40 }}</span>
-			<div class="datetime">[{{bug.createdAt | elapsed}}]</div>
+			<div class="datetime" title="{{bug.createdAt | date:'dd-MMM-yyyy hh:mm:ss a'}}">[{{bug.createdAt | elapsed}}]</div>
 		</li>
 	</ol>
 	<input type="button" value="Remove Closed" (click)="onRemoveClosedClick()">
