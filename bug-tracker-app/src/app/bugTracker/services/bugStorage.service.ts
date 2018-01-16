@@ -15,9 +15,10 @@ export class BugStorageService{
 		this.save(newBug);
 		return newBug;
 	}
-	toggle(bugToToggle : IBug) : void{
-		this.bugOperations.toggle(bugToToggle);
-		this.save(bugToToggle);
+	toggle(bugToToggle : IBug) : IBug {
+		let toggledBug = this.bugOperations.toggle(bugToToggle);
+		this.save(toggledBug);
+		return toggledBug;
 	}
 	private save(bug : IBug){
 		this.storage.setItem(bug.id.toString(), JSON.stringify(bug));

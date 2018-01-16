@@ -20,8 +20,9 @@ export class BugTrackerComponent{
 		this.bugs = [...this.bugs, newBug];
 	}
 
-	onBugNameClick(bug : IBug){
-		this.bugStorage.toggle(bug);
+	onBugNameClick(bugToToggle : IBug){
+		let toggledBug = this.bugStorage.toggle(bugToToggle);
+		this.bugs = this.bugs.map(bug => bug.id === bugToToggle.id ? toggledBug : bug);
 	}
 
 	onRemoveClosedClick(){
@@ -31,15 +32,5 @@ export class BugTrackerComponent{
 				this.bugs.splice(index, 1);
 			}
 		}
-	}
-
-	getClosedCount(){
-		console.log('getClosedCount triggered');
-		let closedCount = 0;
-		for(let index=0, count=this.bugs.length; index < count; index++){
-			if (this.bugs[index].isClosed)
-				++closedCount;
-		}
-		return closedCount;
 	}
 }
