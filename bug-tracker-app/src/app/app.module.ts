@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BugTrackerComponent } from './bugTracker/bugTracker.component';
+import { BugStatsComponent } from './bugTracker/views/bugStats/bugStats.component';
 
 
 import { TrimTextPipe } from './bugTracker/pipes/trimText.pipe';
@@ -19,6 +20,7 @@ import { BugStorageService } from './bugTracker/services/bugStorage.service';
     , TrimTextPipe
     , SortPipe
     , ClosedCountPipe
+    , BugStatsComponent
   ],
   imports: [
     BrowserModule
