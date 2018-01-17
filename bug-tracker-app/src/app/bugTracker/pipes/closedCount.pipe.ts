@@ -3,6 +3,7 @@ import { IBug } from '../models/IBug';
 
 @Pipe({
 	name: 'closedCount'
+
 })
 export class ClosedCountPipe implements PipeTransform {
 	transform(bugs: IBug[] = []): number {
