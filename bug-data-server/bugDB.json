@@ -1,12 +1,6 @@
 {
   "bugs": [
     {
-      "id": 3,
-      "name": "Server communication failure",
-      "isClosed": false,
-      "createdAt": "2018-01-17T04:07:05.895Z"
-    },
-    {
       "id": 5,
       "name": "Bug - 2",
       "isClosed": false,

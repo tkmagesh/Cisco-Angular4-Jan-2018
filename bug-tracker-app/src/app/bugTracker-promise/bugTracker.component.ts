@@ -50,23 +50,20 @@ export class BugTrackerComponent implements OnInit{
 		
 	}
 
-	ngOnInit(){
-		this.bugServer
-			.getAll()
-			.subscribe(bugs => this.bugs = bugs);
+	async ngOnInit(){
+		this.bugs = await this.bugServer.getAll();
 	}
 
 	onNewBug(bug : IBug){
 		this.bugs = [...this.bugs, bug];
 	}
 
-	onBugNameClick(bugToToggle : IBug){
-		this.bugServer
-			.toggle(bugToToggle)
-			.subscribe(toggledBug => this.bugs = this.bugs.map(bug => bug.id === bugToToggle.id ? toggledBug : bug));
+	async onBugNameClick(bugToToggle : IBug){
+		let toggledBug = await this.bugServer.toggle(bugToToggle);
+		this.bugs = this.bugs.map(bug => bug.id === bugToToggle.id ? toggledBug : bug);
 	}
 
-	onRemoveClosedClick(){
+	async onRemoveClosedClick(){
 		/*for(let index=this.bugs.length-1; index >=0 ; index--){
 			if (this.bugs[index].isClosed){
 				await this.bugServer.remove(this.bugs[index])
@@ -75,9 +72,8 @@ export class BugTrackerComponent implements OnInit{
 		}*/
 		let closedBugs = this.bugs.filter(bug => bug.isClosed);
 		closedBugs.forEach(async closedBug => {
-			this.bugServer
-				.remove(closedBug)
-				.subscribe(() => this.bugs = this.bugs.filter(bug => bug.id !== closedBug.id));
+			await this.bugServer.remove(closedBug);
+			this.bugs = this.bugs.filter(bug => bug.id !== closedBug.id);
 		});
 	}
 }

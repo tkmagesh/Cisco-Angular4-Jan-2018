@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 
 import { UtilsModule } from './utils/utils.module'
 
@@ -24,6 +25,7 @@ import { BugServerService } from './bugTracker/services/bugServer.service';
   imports: [
     BrowserModule
     , UtilsModule
+    , HttpModule
   ],
   providers: [
     BugOperationsService
