@@ -1,6 +1,6 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { IBug } from '../../models/IBug';
-import { BugServerService } from '../../services/bugServer.service';
+import { BugStorageService } from '../../services/bugStorage.service';
 
 @Component({
 	selector : 'bug-edit',
@@ -17,12 +17,11 @@ export class BugEditComponent{
 	@Output()
 	bugCreated : EventEmitter<IBug> = new EventEmitter<IBug>();
 
-	constructor(private bugServer : BugServerService){
+	constructor(private bugStorage : BugStorageService){
 
 	}
 	onCreateNewClick(bugName : string){
-		this.bugServer
-			.addNew(bugName)
-			.then(newBug => this.bugCreated.emit(newBug));
+		let newBug : IBug = this.bugStorage.addNew(bugName);
+		this.bugCreated.emit(newBug);
 	}
 }
