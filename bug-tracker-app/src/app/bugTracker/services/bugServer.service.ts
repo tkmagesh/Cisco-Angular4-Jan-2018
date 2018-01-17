@@ -10,6 +10,11 @@ export class BugServerService{
 	constructor(private bugOperations : BugOperationsService, private http : Http){
 
 	}
+	get(id) : Observable<IBug>{
+		return this.http
+			.get(`http://localhost:3000/bugs/${id}`)
+			.map(response => response.json())
+	}
 	getAll() : Observable<IBug[]>{
 		return this.http
 			.get('http://localhost:3000/bugs')
